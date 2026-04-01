@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuantumEnergyOS Mobile - Dashboard de Monitoreo de Energía">
+    <meta name="author" content="Giovanny Corpus Bernal">
+    <meta name="theme-color" content="#00d4ff">
+    
+    <title>⚡ QuantumEnergyOS Mobile - Dashboard</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+    <!-- Partículas Cuánticas -->
+    <canvas id="quantum-particles"></canvas>
+    
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1>QuantumEnergyOS Mobile</h1>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot online"></span>
+                <span class="status-text">En Línea</span>
+            </div>
+        </header>
+        
+        <!-- Dashboard Grid -->
+        <main class="dashboard-grid">
+            <!-- Estado del Sistema -->
+            <section class="card system-status">
+                <div class="card-header">
+                    <h2>🔋 Estado del Sistema</h2>
+                    <span class="badge success">Operativo</span>
+                </div>
+                <div class="card-content">
+                    <div class="status-grid">
+                        <div class="status-item">
+                            <span class="status-label">CPU</span>
+                            <span class="status-value" id="cpu-usage">0%</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="cpu-bar"></div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Memoria</span>
+                            <span class="status-value" id="memory-usage">0%</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="memory-bar"></div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">Disco</span>
+                            <span class="status-value" id="disk-usage">0%</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="disk-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Métricas de Energía -->
+            <section class="card energy-metrics">
+                <div class="card-header">
+                    <h2>⚡ Métricas de Energía</h2>
+                    <span class="badge info">Tiempo Real</span>
+                </div>
+                <div class="card-content">
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-icon">🔌</div>
+                            <div class="metric-info">
+                                <span class="metric-label">Voltaje</span>
+                                <span class="metric-value" id="voltage">0 V</span>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">⚡</div>
+                            <div class="metric-info">
+                                <span class="metric-label">Corriente</span>
+                                <span class="metric-value" id="current">0 A</span>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">💡</div>
+                            <div class="metric-info">
+                                <span class="metric-label">Potencia</span>
+                                <span class="metric-value" id="power">0 W</span>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">📊</div>
+                            <div class="metric-info">
+                                <span class="metric-label">Frecuencia</span>
+                                <span class="metric-value" id="frequency">0 Hz</span>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">🌡️</div>
+                            <div class="metric-info">
+                                <span class="metric-label">Temperatura</span>
+                                <span class="metric-value" id="temperature">0°C</span>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">📈</div>
+                            <div class="metric-info">
+                                <span class="metric-label">Factor de Potencia</span>
+                                <span class="metric-value" id="power-factor">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Gráfico de Energía -->
+            <section class="card energy-chart">
+                <div class="card-header">
+                    <h2>📊 Consumo en Tiempo Real</h2>
+                    <div class="chart-controls">
+                        <button class="btn btn-small" id="btn-1h">1H</button>
+                        <button class="btn btn-small active" id="btn-24h">24H</button>
+                        <button class="btn btn-small" id="btn-7d">7D</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <canvas id="energy-chart"></canvas>
+                </div>
+            </section>
+            
+            <!-- Alertas -->
+            <section class="card alerts">
+                <div class="card-header">
+                    <h2>⚠️ Alertas</h2>
+                    <span class="badge warning" id="alert-count">0</span>
+                </div>
+                <div class="card-content">
+                    <div class="alerts-list" id="alerts-list">
+                        <div class="alert-item info">
+                            <span class="alert-icon">ℹ️</span>
+                            <span class="alert-message">Sistema iniciado correctamente</span>
+                            <span class="alert-time">Ahora</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Acciones Rápidas -->
+            <section class="card quick-actions">
+                <div class="card-header">
+                    <h2>🚀 Acciones Rápidas</h2>
+                </div>
+                <div class="card-content">
+                    <div class="actions-grid">
+                        <button class="action-btn" id="btn-optimize">
+                            <span class="action-icon">⚡</span>
+                            <span class="action-text">Optimizar</span>
+                        </button>
+                        <button class="action-btn" id="btn-refresh">
+                            <span class="action-icon">🔄</span>
+                            <span class="action-text">Actualizar</span>
+                        </button>
+                        <button class="action-btn" id="btn-report">
+                            <span class="action-icon">📊</span>
+                            <span class="action-text">Reporte</span>
+                        </button>
+                        <button class="action-btn" id="btn-settings">
+                            <span class="action-icon">⚙️</span>
+                            <span class="action-text">Configuración</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Información del Sistema -->
+            <section class="card system-info">
+                <div class="card-header">
+                    <h2>💻 Información del Sistema</h2>
+                </div>
+                <div class="card-content">
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-label">Sistema</span>
+                            <span class="info-value" id="system-name">QuantumEnergyOS Mobile</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Versión</span>
+                            <span class="info-value" id="system-version">0.1.0</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Plataforma</span>
+                            <span class="info-value" id="system-platform">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Arquitectura</span>
+                            <span class="info-value" id="system-arch">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Python</span>
+                            <span class="info-value" id="python-version">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Última Actualización</span>
+                            <span class="info-value" id="last-update">-</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>⚡ QuantumEnergyOS Mobile V.01 - Giovanny Corpus Bernal - Mexicali, Baja California</p>
+            <p class="footer-sub">Sistema Operativo Móvil Cuántico para Gestión de Energía</p>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
