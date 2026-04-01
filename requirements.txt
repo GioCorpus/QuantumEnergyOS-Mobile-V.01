@@ -1,0 +1,101 @@
+# ⚡ QuantumEnergyOS Mobile V.01 - Dependencias
+# Sistema Operativo Móvil Cuántico para Gestión de Energía
+# Autor: Giovanny Corpus Bernal - Mexicali, Baja California
+
+# ============================================
+# Framework Web y API
+# ============================================
+flask==3.0.0
+flask-socketio==5.3.6
+flask-cors==4.0.0
+flask-restful==0.3.10
+
+# ============================================
+# Monitoreo del Sistema
+# ============================================
+psutil==5.9.6
+GPUtil==1.4.0
+
+# ============================================
+# Base de Datos
+# ============================================
+sqlalchemy==2.0.23
+alembic==1.13.0
+
+# ============================================
+# Configuración
+# ============================================
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# ============================================
+# HTTP y Redes
+# ============================================
+requests==2.31.0
+httpx==0.25.2
+aiohttp==3.9.1
+
+# ============================================
+# WebSocket y Comunicación en Tiempo Real
+# ============================================
+websocket-client==1.7.0
+simple-websocket==1.0.0
+
+# ============================================
+# Utilidades
+# ============================================
+python-dateutil==2.8.2
+pytz==2023.3
+numpy==1.26.2
+pandas==2.1.4
+
+# ============================================
+# Logging y Monitoreo
+# ============================================
+colorlog==6.8.0
+tqdm==4.66.1
+
+# ============================================
+# Seguridad
+# ============================================
+cryptography==41.0.7
+pyjwt==2.8.0
+
+# ============================================
+# Optimización
+# ============================================
+ujson==5.9.0
+orjson==3.9.10
+
+# ============================================
+# Desarrollo y Testing (Opcional)
+# ============================================
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-asyncio==0.23.2
+black==23.12.1
+flake8==6.1.0
+mypy==1.7.1
+
+# ============================================
+# Documentación (Opcional)
+# ============================================
+sphinx==7.2.6
+sphinx-rtd-theme==2.0.0
+
+# ============================================
+# Notas de Instalación
+# ============================================
+# Para instalar todas las dependencias:
+# pip install -r requirements.txt
+#
+# Para instalar solo dependencias de producción:
+# pip install -r requirements.txt --no-deps
+#
+# Para instalar en Termux:
+# pkg install python
+# pip install -r requirements.txt
+#
+# Para instalar en Waydroid:
+# apt install python3 python3-pip
+# pip3 install -r requirements.txt

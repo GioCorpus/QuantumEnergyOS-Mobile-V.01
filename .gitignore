@@ -1,18 +1,379 @@
-# This .gitignore is appropriate for repositories deployed to GitHub Pages and using
-# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+# ⚡ QuantumEnergyOS Mobile - .gitignore
+# Sistema Operativo Móvil Cuántico para Gestión de Energía
+# Autor: Giovanny Corpus Bernal - Mexicali, Baja California
 
-# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Additional Ruby/bundler ignore for when you run: bundle install
-/vendor
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv/
 
-# Specific ignore for GitHub Pages
-# GitHub Pages will always use its own deployed version of pages-gem 
-# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
-# counterproductive to check this file into the repository.
-# Details at https://github.com/github/pages-gem/issues/768
-Gemfile.lock
+# ============================================
+# IDE
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================
+# Datos
+# ============================================
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# Backup
+# ============================================
+backups/
+*.bak
+*.backup
+*.old
+
+# ============================================
+# Archivos del sistema
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================
+# Variables de entorno
+# ============================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ============================================
+# Build
+# ============================================
+build/
+dist/
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# ============================================
+# Dependencias
+# ============================================
+node_modules/
+bower_components/
+vendor/
+
+# ============================================
+# Cache
+# ============================================
+.cache/
+.parcel-cache/
+*.cache
+
+# ============================================
+# Archivos temporales
+# ============================================
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ============================================
+# Archivos de configuración local
+# ============================================
+config/local.yaml
+config/local.conf
+config/*.local
+
+# ============================================
+# Archivos de prueba
+# ============================================
+test-results/
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+
+# ============================================
+# Archivos de documentación generada
+# ============================================
+docs/_build/
+docs/site/
+
+# ============================================
+# Archivos de Docker
+# ============================================
+docker-compose.override.yml
+.docker/
+
+# ============================================
+# Archivos de Kubernetes
+# ============================================
+kubeconfig
+*.kubeconfig
+
+# ============================================
+# Archivos de Terraform
+# ============================================
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# ============================================
+# Archivos de Ansible
+# ============================================
+*.retry
+
+# ============================================
+# Archivos de Vagrant
+# ============================================
+.vagrant/
+
+# ============================================
+# Archivos de npm/yarn
+# ============================================
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# ============================================
+# Archivos de pip
+# ============================================
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ============================================
+# Archivos de Jupyter Notebook
+# ============================================
+.ipynb_checkpoints
+
+# ============================================
+# Archivos de pyenv
+# ============================================
+.python-version
+
+# ============================================
+# Archivos de celery
+# ============================================
+celerybeat-schedule
+celerybeat.pid
+
+# ============================================
+# Archivos de SageMath
+# ============================================
+*.sage.py
+
+# ============================================
+# Archivos de Spyder
+# ============================================
+.spyderproject
+.spyproject
+
+# ============================================
+# Archivos de Rope
+# ============================================
+.ropeproject
+
+# ============================================
+# Archivos de mkdocs
+# ============================================
+/site
+
+# ============================================
+# Archivos de mypy
+# ============================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================
+# Archivos de Pyre
+# ============================================
+.pyre/
+
+# ============================================
+# Archivos de pytype
+# ============================================
+.pytype/
+
+# ============================================
+# Archivos de Cython
+# ============================================
+cython_debug/
+
+# ============================================
+# Archivos de setuptools
+# ============================================
+setup.py
+
+# ============================================
+# Archivos de twine
+# ============================================
+.twine/
+
+# ============================================
+# Archivos de pytest
+# ============================================
+.pytest_cache/
+
+# ============================================
+# Archivos de coverage
+# ============================================
+.coverage
+coverage.xml
+htmlcov/
+
+# ============================================
+# Archivos de tox
+# ============================================
+.tox/
+
+# ============================================
+# Archivos de nox
+# ============================================
+.nox/
+
+# ============================================
+# Archivos de pre-commit
+# ============================================
+.pre-commit-config.yaml
+
+# ============================================
+# Archivos de black
+# ============================================
+.black/
+
+# ============================================
+# Archivos de isort
+# ============================================
+.isort.cfg
+
+# ============================================
+# Archivos de flake8
+# ============================================
+.flake8
+
+# ============================================
+# Archivos de pylint
+# ============================================
+.pylintrc
+
+# ============================================
+# Archivos de mypy
+# ============================================
+mypy.ini
+
+# ============================================
+# Archivos de pyproject.toml
+# ============================================
+pyproject.toml
+
+# ============================================
+# Archivos de setup.cfg
+# ============================================
+setup.cfg
+
+# ============================================
+# Archivos de MANIFEST.in
+# ============================================
+MANIFEST.in
+
+# ============================================
+# Archivos de Makefile
+# ============================================
+Makefile
+
+# ============================================
+# Archivos de docker-compose
+# ============================================
+docker-compose.override.yml
+
+# ============================================
+# Archivos de Kubernetes
+# ============================================
+k8s/
+kubernetes/
+
+# ============================================
+# Archivos de Helm
+# ============================================
+charts/
+
+# ============================================
+# Archivos de Skaffold
+# ============================================
+skaffold.yaml
+
+# ============================================
+# Archivos de Tilt
+# ============================================
+Tiltfile
+
+# ============================================
+# Archivos de DevSpace
+# ============================================
+devspace.yaml
+
+# ============================================
+# Archivos de Rancher
+# ============================================
+rancher-compose.yml
+
+# ============================================
+# Archivos de Docker Swarm
+# ============================================
+docker-stack.yml
+
+# ============================================
+# Archivos de Portainer
+# ============================================
+portainer-compose.yml
