@@ -1,0 +1,386 @@
+# ⚡ QuantumEnergyOS Mobile - Configuración Principal
+# Sistema Operativo Móvil Cuántico para Gestión de Energía
+# Autor: Giovanny Corpus Bernal - Mexicali, Baja California
+
+# ============================================
+# Sistema
+# ============================================
+system:
+  name: "QuantumEnergyOS Mobile"
+  version: "0.1.0"
+  mode: "production"
+  author: "Giovanny Corpus Bernal"
+  location: "Mexicali, Baja California, México"
+  description: "Sistema Operativo Móvil Cuántico para Gestión de Energía"
+  
+  # Características
+  features:
+    quantum_particles: true
+    energy_monitoring: true
+    blackout_prevention: true
+    real_time_dashboard: true
+    api_server: true
+    websocket: true
+
+# ============================================
+# Energía
+# ============================================
+energy:
+  # Intervalo de monitoreo en segundos
+  monitoring_interval: 1
+  
+  # Umbral de alerta (porcentaje)
+  alert_threshold: 85
+  
+  # Optimización automática
+  auto_optimize: true
+  
+  # Límites de energía
+  limits:
+    voltage_min: 210
+    voltage_max: 240
+    current_max: 50
+    power_max: 12000
+    frequency_min: 59
+    frequency_max: 61
+    temperature_max: 70
+  
+  # Métricas a monitorear
+  metrics:
+    - voltage
+    - current
+    - power
+    - frequency
+    - power_factor
+    - temperature
+    - cpu_usage
+    - memory_usage
+  
+  # Alertas
+  alerts:
+    enabled: true
+    levels:
+      - info
+      - warning
+      - critical
+    notifications: true
+    sound: true
+    vibration: true
+
+# ============================================
+# Interfaz de Usuario
+# ============================================
+ui:
+  # Tema
+  theme: "quantum-blue"
+  
+  # Partículas cuánticas
+  particles:
+    enabled: true
+    count: 100
+    color: "#00d4ff"
+    glow: true
+    glow_intensity: 0.8
+    animation_speed: 1.0
+  
+  # Animaciones
+  animations:
+    enabled: true
+    speed: 1.0
+    smooth: true
+  
+  # Modo nocturno
+  night_mode:
+    enabled: true
+    auto_switch: true
+    start_time: "20:00"
+    end_time: "06:00"
+  
+  # Dashboard
+  dashboard:
+    refresh_rate: 60
+    show_particles: true
+    show_glow: true
+    responsive: true
+  
+  # Colores
+  colors:
+    primary: "#00d4ff"
+    secondary: "#0099cc"
+    accent: "#00ffff"
+    background: "#0a0a1a"
+    surface: "#1a1a2e"
+    text: "#ffffff"
+    text_secondary: "#b0b0b0"
+    success: "#00ff88"
+    warning: "#ffaa00"
+    error: "#ff4444"
+    info: "#00d4ff"
+
+# ============================================
+# API
+# ============================================
+api:
+  # Configuración del servidor
+  host: "0.0.0.0"
+  port: 8080
+  debug: false
+  
+  # CORS
+  cors:
+    enabled: true
+    origins: ["*"]
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    headers: ["Content-Type", "Authorization"]
+  
+  # Rate limiting
+  rate_limit:
+    enabled: true
+    requests_per_minute: 60
+    burst: 10
+  
+  # Autenticación
+  auth:
+    enabled: false
+    type: "jwt"
+    secret_key: "quantum-energy-secret-key-change-in-production"
+    token_expiry_hours: 24
+  
+  # Endpoints
+  endpoints:
+    status: "/api/status"
+    energy: "/api/energy"
+    energy_history: "/api/energy/history"
+    energy_optimize: "/api/energy/optimize"
+    alerts: "/api/alerts"
+    alerts_acknowledge: "/api/alerts/acknowledge"
+    metrics: "/api/metrics"
+    system_info: "/api/system/info"
+    websocket: "/ws/realtime"
+
+# ============================================
+# Base de Datos
+# ============================================
+database:
+  type: "sqlite"
+  path: "data/quantum_energy.db"
+  
+  # Configuración
+  settings:
+    journal_mode: "WAL"
+    synchronous: "NORMAL"
+    cache_size: -2000  # 2MB
+    temp_store: "MEMORY"
+  
+  # Backup
+  backup:
+    enabled: true
+    interval_hours: 24
+    location: "data/backups"
+    keep_days: 7
+
+# ============================================
+# Logging
+# ============================================
+logging:
+  level: "INFO"
+  file: "logs/quantum_energy.log"
+  
+  # Formato
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Rotación
+  rotation:
+    max_size_mb: 100
+    backup_count: 5
+    compress: true
+  
+  # Consola
+  console:
+    enabled: true
+    colorize: true
+
+# ============================================
+# Motor Cuántico
+# ============================================
+quantum:
+  # Configuración del motor
+  engine:
+    enabled: true
+    particles: 100
+    dimensions: 3
+    entanglement: true
+    superposition: true
+  
+  # Optimización
+  optimization:
+    enabled: true
+    algorithm: "quantum_annealing"
+    iterations: 1000
+    temperature: 1.0
+    cooling_rate: 0.99
+  
+  # Simulación
+  simulation:
+    enabled: true
+    time_step: 0.01
+    max_time: 100.0
+    precision: 0.001
+
+# ============================================
+# Seguridad
+# ============================================
+security:
+  # Encriptación
+  encryption:
+    enabled: true
+    algorithm: "AES-256-GCM"
+    key_rotation_days: 30
+  
+  # Firewall
+  firewall:
+    enabled: true
+    allowed_ips:
+      - "127.0.0.1"
+      - "192.168.0.0/16"
+      - "10.0.0.0/8"
+    blocked_ips: []
+  
+  # Rate limiting
+  rate_limiting:
+    enabled: true
+    max_requests: 100
+    window_seconds: 60
+
+# ============================================
+# Rendimiento
+# ============================================
+performance:
+  # Optimizaciones
+  optimizations:
+    low_memory_mode: true
+    gc_optimization: true
+    cache_enabled: true
+    cache_size_mb: 64
+  
+  # Límites
+  limits:
+    max_memory_mb: 512
+    max_cpu_percent: 80
+    max_connections: 100
+    max_threads: 10
+  
+  # Monitoreo
+  monitoring:
+    enabled: true
+    interval_seconds: 5
+    alert_threshold: 90
+
+# ============================================
+# Actualizaciones
+# ============================================
+updates:
+  # Auto-actualización
+  auto_check: true
+  check_interval_hours: 24
+  auto_update: false
+  
+  # Fuente
+  source: "github"
+  repository: "GiovannyCorpus/QuantumEnergyOS-Mobile"
+  branch: "main"
+  
+  # Notificaciones
+  notifications:
+    enabled: true
+    sound: true
+    vibration: true
+
+# ============================================
+# Backup
+# ============================================
+backup:
+  # Configuración
+  enabled: true
+  interval_hours: 24
+  location: "data/backups"
+  
+  # Retención
+  retention:
+    keep_days: 7
+    keep_weeks: 4
+    keep_months: 3
+  
+  # Contenido
+  include:
+    - database
+    - config
+    - logs
+    - data
+  
+  # Compresión
+  compression:
+    enabled: true
+    algorithm: "gzip"
+    level: 6
+
+# ============================================
+# Notificaciones
+# ============================================
+notifications:
+  # Configuración
+  enabled: true
+  
+  # Tipos
+  types:
+    alerts: true
+    updates: true
+    system: true
+    energy: true
+  
+  # Sonido
+  sound:
+    enabled: true
+    volume: 0.8
+  
+  # Vibración
+  vibration:
+    enabled: true
+    pattern: [100, 50, 100]
+  
+  # Prioridades
+  priorities:
+    critical: 3
+    warning: 2
+    info: 1
+
+# ============================================
+# Mexicali Desert Theme
+# ============================================
+mexicali:
+  # Tema del desierto
+  theme:
+    enabled: true
+    name: "Mexicali Desert Glow"
+    
+  # Colores del desierto
+  colors:
+    sand: "#f4d03f"
+    sunset: "#ff6b35"
+    sky: "#87ceeb"
+    night: "#0a0a1a"
+    quantum_glow: "#00d4ff"
+  
+  # Efectos
+  effects:
+    heat_shimmer: true
+    dust_particles: true
+    quantum_glow: true
+    star_field: true
+  
+  # Animaciones
+  animations:
+    sun_rise: true
+    sun_set: true
+    particle_flow: true
+    energy_pulse: true
